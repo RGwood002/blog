@@ -1,7 +1,11 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 const pageTitle = "About me";
@@ -17,20 +21,13 @@ const skills = ["HTML", "CSS", "Javascript", "Python", "Java", "C++"]
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-<body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-    
-    <h1>{pageTitle}</h1>
-    <p> Currently unemployed</p>
+
+<BaseLayout pageTitle="About Me">
 
     <p> A few fun facts about me</p>
 
@@ -48,7 +45,7 @@ const goal = 3;
 
     <p>Some skills I have are:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>I am happy to be learning Astro!</p>}
@@ -56,5 +53,20 @@ const goal = 3;
     {finished && <p>I finished this tutorial!</p>}
 
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+</BaseLayout>
     
-</body>
+
+    
+
+<style is:global define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>

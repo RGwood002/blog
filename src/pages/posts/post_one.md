@@ -1,6 +1,7 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Book scanner'
-pubDate: 2026-01-12
+pubDate: '2026-01-12'
 description: 'Blog describing creating my book scanner project'
 author: 'Ryan Greenwood'
 image:

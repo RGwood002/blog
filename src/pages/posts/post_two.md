@@ -1,11 +1,12 @@
 ---
-title: A new project
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "3D Printing as a Service"
 author: Ryan Greenwood
 description: "After the hardcover project I had a new idea"
 image: 
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "Astro logo"
-pubDate: 2026-01-12
+pubDate: '2026-01-12'
 tags: ["learning", "3d-printing"]
 ---
 
