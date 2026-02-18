@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Prose from "../components/Prose.astro";
 const { frontmatter } = Astro.props;
 
 const date = new Date(frontmatter.pubDate)
@@ -12,7 +13,10 @@ const date = new Date(frontmatter.pubDate)
     {frontmatter.tags.map((tag: string) => 
     (<p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>))}
 </div>
-<slot />
+<Prose>
+
+  <slot />
+</Prose>
 </BaseLayout>
 
 <style>
@@ -32,5 +36,9 @@ const date = new Date(frontmatter.pubDate)
     padding: .5em 1em;
     font-size: 1.15em;
     background-color: #F8FCFD;
+  }
+
+  h1{
+    font-size: .5rem;
   }
 </style>

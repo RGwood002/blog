@@ -1,9 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -28,31 +23,34 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle="About Me">
+  <div class="main-content">
+    <p>Hi!! Welcome to my blog. Started this year, <span class="year">2026</span></p>
 
-    <p> A few fun facts about me</p>
+    <p>
+      Began this as a way to practice maintaining something. I am not quite sure how this blog will evolve in the future but
+      to even iterate on something, one has to begin. I hope to share projects, memories, or track hobbies on here. 
+    </p>
 
+    <p>
+      I have spent a majority of my life moving around, when I was younger I would end up moving schools almost yearly, until about the 4th grade where
+      my family decided to set roots in Southern California. From there I went on to graduate with a <span class="degree">Bachelors of Science
+      in Computer Science from California State University Northridge.</span> Where I would meet many
+      people who heavily influence any hobbies or adventures found on this blog.
+    </p>
+
+    <p>
+      From there I began work as a Software Developer for a Mid-size Finance company and am currently <a href="mailto:ryan.gwood282@gmail.com">open to work!</a> Other hobbies I have include: 
+    </p>
     <ul>
-      <li>
-      My name is {identity.firstName}
-      </li>
-      <li>
-        I am located in {identity.country} and open to work as a {identity.occupation}
-      </li>
-      {identity.hobbies.length >= 2 &&
-        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>      
-      }
+      <li>The gym where the intesity varies month to month</li>
+      <li>Along with cooking habit where I hope to find a new appreciation for food I have claimed to dislike in the past</li>
+      <li>A reading habit that has allowed me to explore many new areas/worlds without needing to travel far</li>
+      <li>Homelabbing that has greatly enabled me to explore new technologies relating to programming</li>
     </ul>
+  
+  </div>
+  
 
-    <p>Some skills I have are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 </BaseLayout>
     
 
@@ -60,7 +58,7 @@ const textCase = "uppercase";
 
 <style is:global define:vars={{skillColor, fontWeight, textCase}}>
   h1 {
-    color: purple;
+    color: var(--ink);
     font-size: 4rem;
   }
 
@@ -68,5 +66,43 @@ const textCase = "uppercase";
     color: var(--skillColor);
     font-weight: var(--fontWeight);
     text-transform: var(--textCase);
+  }
+
+  .main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 65ch;
+	  padding: 2rem 2rem 4rem;
+    gap: 2rem;
+    background-color: var(--storm);
+    color: var(--stone);
+    margin: 1rem;
+  }
+
+  p{
+    gap: 2rem;
+  }
+
+  a {
+    color: var(--rain)
+  }
+
+  .year{
+    color: var(--petal)
+  }
+
+  .degree{
+    color: var(--clay)
+  }
+
+  li:before{
+    content: "• ";
+    color: var(--rain)
+  }
+  ul{
+    list-style: none;
+    font-size: .85rem;
+    line-height: 1.5;
   }
 </style>

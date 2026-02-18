@@ -10,9 +10,13 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}))
 ---
 
 <BaseLayout pageTitle = {pageTitle}>
-  <p> hope to add more</p>
+  <p>Projects I am working on!</p>
 
     <ul>
         {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}></BlogPost>)} 
     </ul>
 </BaseLayout>
+
+
+<style>
+</style>

@@ -1,0 +1,89 @@
+---
+import { getCollection,getEntry, render } from "astro:content";
+
+
+const entries = await getCollection('resume');
+
+const tiltspin = await getEntry('resume', 'tiltspin_exp');
+const westlake = await getEntry('resume', 'westlake_exp')
+if(!tiltspin) throw new Error("tiltspin_exp not found")
+if(!westlake) throw new Error("westlake_exp not found")
+
+const { Content: TiltSpin } = await render(tiltspin)
+const { Content: Westlake } = await render(westlake)
+---
+
+<div class="container-cards">
+  <div class="card">
+    <div class="card-top">
+      <h2>{tiltspin.data.company}</h2>
+      <p class="title-sec">{tiltspin.data.title} : <span>{tiltspin.data.start_date} - {tiltspin.data.end_date}</span></p>
+    </div>
+    <div class="content">
+      <TiltSpin></TiltSpin>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h2>{westlake.data.company}</h2>
+      <p class="title-sec">{westlake.data.title} : <span>{westlake.data.start_date} - {westlake.data.end_date}</span></p>
+    </div>
+    <div class="content">
+      <Westlake></Westlake>
+    </div>
+  </div>
+
+</div>
+
+
+<style>
+  .container-cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 65ch;
+	  padding: 1rem 2rem 4rem;
+    gap: 2rem;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: column;
+    background: var(--storm);
+    color: var(--stone);
+    padding: 2rem;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .title-sec{
+    font-size: 0.8rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--ochre);
+	margin-bottom: 0.4rem;
+	opacity: 0.8;
+  }
+
+  :global(.content li::before){
+    content: "• ";
+    color: var(--clay)
+  }
+
+  :global(.content li){
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--stone);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+  .timeline-section{
+    width:65ch;
+  }
+</style>
+
+
+
+

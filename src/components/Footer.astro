@@ -3,14 +3,31 @@ import Social from './Social.astro'
 ---
 
 <footer>
-    <Social platform="github" username="rgwood002"></Social>
-    <Social platform="linkedin" username="rgwood002"></Social>
+    <div>
+      <p>I am Ryan, Software Engineer residing in SoCal. I enjoy cooking, reading, journaling, and homelabbing. </p>
+    </div>
+    <div class="socials">
+      <Social platform="github" ext="com" username="rgwood002"></Social>
+      <Social platform="linkedin" ext="com" username="in/rgwood002"></Social>
+      <Social platform="hardcover" ext="app" username="@GridLockkun"></Social>
+    </div>
+    
 </footer>
 
 <style>
   footer {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    max-width: 30rem;
+    border-top: 1px solid var(--dust);
+  }
+
+  .socials{
+    display: flex;
+    gap: 1rem;
   }
 </style>

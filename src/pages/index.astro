@@ -5,17 +5,27 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greetings.jsx'
+import Resume from '../components/Resume.astro';
 import '../styles/global.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
-const page = "Home"
+const page = "Professional Experience"
 
-const greetings = ["Hello", "Howdy", "Welcome", "Good day"]
-const greeting_two = ["whas gud", "yo", "sup", "hey"]
 ---
 <BaseLayout pageTitle={page}>
-  <h2>Random h2</h2>
-  <Greeting client:load messages={greetings}></Greeting>
+  <p>This page lists any Work or Long Term projects that have developed into customer facing products</p>
+  <Resume></Resume>
 </BaseLayout>
+
+<style>
+  p{
+    font-size: 0.65rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--storm);
+	margin-bottom: 0.4rem;
+	opacity: 0.8;
+  margin-top: 1rem;
+  }
+</style>
