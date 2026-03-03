@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'External Book Log'
 author: Ryan Greenwood 
 description: "External Book log for friends to utilize"
-image: "src/images/entry.png"
+image: "images/entry.png"
 pubDate: '2025-11-10'
 tags: ["qr_code", "book", "Next.js", "Express.js"]
 ---
@@ -34,15 +34,15 @@ The stack is:
 ## Process Flow
 Kicks off with me suggesting a book to a friend and offering to mail it to them. From there I can log into the admin panel for the app.
 
-![Creating an entry for the check-in](../../images/entry.png)
+![Creating an entry for the check-in](/images/entry.png)
 
 After I input the information for my book, The tainted cup I will be given a QR code which I print out and simply tape into the book
 
-![QR code scribbled out to make unscannable](../../images/qr_code.jpg)
+![QR code scribbled out to make unscannable](/images/qr_code.jpg)
 
 After this step I simply give to my friend either through the mail or in person. Some friends seem to be using it!
 
-![Friend checked in they have my book](../../images/check-in.png)
+![Friend checked in they have my book](/images/check-in.png)
 
 ---
 

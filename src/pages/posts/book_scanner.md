@@ -4,7 +4,7 @@ title: 'Book scanner'
 pubDate: '2026-01-12'
 description: 'Update my Hardcover account via an External Camera'
 author: 'Ryan Greenwood'
-image: 'src/images/icons/hardcover.png'
+image: '/images/icons/hardcover.png'
 tags: ["blogging", "learning", "hardcover"]
 ---
 ## Project overview
