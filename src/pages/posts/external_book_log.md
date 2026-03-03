@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: 'External Book Log'
 author: Ryan Greenwood 
 description: "External Book log for friends to utilize"
-image: "images/entry.png"
+image: "/images/entry.png"
 pubDate: '2025-11-10'
 tags: ["qr_code", "book", "Next.js", "Express.js"]
 ---
