@@ -1,0 +1,11 @@
+---
+import Books from "./Books.astro";
+const response = await fetch(`${Astro.url.origin}/api/hardcover`)
+const book_data = await response.json();
+const user_books = book_data.data.user_books
+console.log(typeof(user_books))
+console.log(JSON.stringify(book_data, null, 2))
+---
+
+<Books title="Current" books={user_books}></Books>
+

@@ -4,7 +4,7 @@ import {glob, file} from 'astro/loaders';
 import {z} from 'astro/zod';
 
 const resumeCollection = defineCollection({
-    loader: glob({pattern: '**/*.md', base: './src/content/resume/experience'}),
+    loader: glob({pattern: '**/*.{md, mdx}', base: './src/content/resume/experience'}),
     schema: z.object({
         title: z.string(),
         company: z.string(),

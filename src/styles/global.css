@@ -151,7 +151,32 @@ html.dark {
   flex-direction: column;
   align-items: center;
 }
+
+.prose{
+  h1,h2,h3,h4,h5{
+    @apply w-full;
+  }
+}
+
 .prose h1{
   font-size: 2rem;
-  color: var(--clay)  
+  color: var(--ink);  
+  @apply w-full;
+}
+
+.prose p{
+  line-height: 1.6;
+
+}
+.prose img{
+  display: block;
+  margin: 10px;
+}
+
+.prose ul{
+  list-style: none;
+}
+.prose li::before {
+  content: "• ";
+  color: var(--rain)
 }

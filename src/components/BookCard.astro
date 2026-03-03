@@ -1,0 +1,37 @@
+---
+const { book } = Astro.props
+
+---
+
+<div class = "book-card">
+    <a href=`https://hardcover.app/books/${book.book.slug}`>
+        <div class="book-image">
+            <img src=`${book.book.image.url}`/>
+        </div>
+        <div class="book-title">
+            <p>{book.book.title}</p>
+        </div>
+    </a>
+
+</div>
+    
+
+<style>
+    .book-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+    }
+    .book-image{
+        height: 100px;
+    }
+
+    .book-image img{
+        height:100%;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+

@@ -1,7 +1,78 @@
 ---
-const {url, title} = Astro.props
+const {url, title,description,date, thumbnail} = Astro.props
 ---
 
-<li>
-    <a href = {url}>{title}</a>
+<li class="blog-card">
+    <a href = {url} class="card">
+        <div class="image-content">
+            <img src={thumbnail} />
+        </div> 
+        <div class="text-content">
+            <div class="text-title">
+                <p>{title}</p>
+            </div>
+            <div class="text-description">
+               <p>{description}</p> 
+            </div>
+            <div class="text-date">
+                {date}
+            </div>
+        </div>
+    
+    </a>
 </li>
+
+<style>
+    .card{
+        margin: 10 -12px;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        padding: 12px;
+        align-items: center;
+        background-color: var(--storm);
+        transition: background-color .2s;
+        gap: 10px;
+    }
+
+    .card:hover{
+        background-color: var(--moss);
+    }
+
+    .card .text-content{
+        display:flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 2px;
+        color: var(--stone);
+    }
+
+    .image-content{
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .image-content img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+    
+
+    .blog-card{
+        margin: 10px;
+    }
+
+    .text-title{
+        font-size: .8em;
+        color: var(--clay);
+    }
+
+    .text-date{
+        font-size: .8em;
+    }
+
+
+</style>

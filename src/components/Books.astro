@@ -1,0 +1,21 @@
+---
+const { title, books} = Astro.props
+import BookCard from "./BookCard.astro"
+---
+
+<div class="whole-shelf">
+    <div class="shelf-title">
+        <h1>{title}</h1>
+    </div>
+    <div class="book-list">
+        {books.map((item: any) => <BookCard book={item}></BookCard>)}
+    </div>   
+</div>
+
+
+<style>
+    .book-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+</style>
